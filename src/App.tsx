@@ -64,7 +64,6 @@ class XmlDataProcessor extends NativeXmlDataProcessor {
       if (Array.from(childNodes).some((child) => child.nodeName === 'a:Num')) {
         const li = upcastWriter.createElement('li', attributes);
 
-        console.log(Array.from(parent.getChildren()).length > 0 && Array.from(parent.getChildren()));
         let ol = Array.from(parent.getChildren()).find((child) => (child as CKElement).name === 'ol') as CKElement;
         if (!ol) {
           ol = upcastWriter.createElement('ol', { node: parent.getAttribute('node') + '-ol' });
@@ -153,7 +152,7 @@ function App() {
       editor={ClassicEditor}
       config={{
         plugins: [Essentials, SourceEditing, GeneralHtmlSupport, XmlPlugin],
-        toolbar: ['sourceEditing', 'exportXml'],
+        toolbar: ['sourceEditing'],
         htmlSupport: {
           allow: [
             {

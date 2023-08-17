@@ -8,7 +8,7 @@ const require = createRequire(import.meta.url);
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), ckeditor5({ theme: require.resolve('@ckeditor/ckeditor5-theme-lark') })],
-  define: {
-    global: 'window',
-  },
+  // define: {
+  //   global: 'window',
+  // },
 });
